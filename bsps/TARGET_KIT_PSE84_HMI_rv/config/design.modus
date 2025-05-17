@@ -44,19 +44,9 @@
                         <Alias value="CYBSP_SWDCK"/>
                     </Aliases>
                 </Block>
-                <Block location="ioss[0].port[6].pin[4]">
-                    <Aliases>
-                        <Alias value="CYBSP_WL_REG_ON"/>
-                    </Aliases>
-                </Block>
                 <Block location="ioss[0].port[6].pin[6]">
                     <Aliases>
                         <Alias value="CYBSP_WL_BT_DEV_WAKE"/>
-                    </Aliases>
-                </Block>
-                <Block location="ioss[0].port[8].pin[2]">
-                    <Aliases>
-                        <Alias value="CYBSP_BT_REG_ON"/>
                     </Aliases>
                 </Block>
                 <Block location="ioss[0].port[8].pin[4]">
@@ -347,21 +337,6 @@
                 <Block location="peri[1].group[1].div_16_5[0]">
                     <Aliases>
                         <Alias value="CYBSP_TDM_CONTROLLER_0_CLK_DIV"/>
-                    </Aliases>
-                </Block>
-                <Block location="srss[0].mcwdt[0]">
-                    <Aliases>
-                        <Alias value="CYBSP_CM33_LPTIMER_0"/>
-                    </Aliases>
-                </Block>
-                <Block location="srss[0].mcwdt[1]">
-                    <Aliases>
-                        <Alias value="CYBSP_CM55_LPTIMER_1"/>
-                    </Aliases>
-                </Block>
-                <Block location="srss[0].rtc[0]">
-                    <Aliases>
-                        <Alias value="CYBSP_RTC"/>
                     </Aliases>
                 </Block>
                 <Block location="tdm[0].tdm[0]">
@@ -773,6 +748,27 @@
                     </Parameters>
                 </Personality>
                 <Personality template="pin" version="3.0">
+                    <Block location="ioss[0].port[6].pin[4]" locked="true">
+                        <Aliases>
+                            <Alias value="CYBSP_WIFI_WL_REG_ON"/>
+                        </Aliases>
+                    </Block>
+                    <Parameters>
+                        <Param id="DriveModes" value="CY_GPIO_DM_OD_DRIVESLOW"/>
+                        <Param id="driveStrength" value="CY_GPIO_DRIVE_1_2"/>
+                        <Param id="driveStrengthTrim" value="CY_GPIO_DRIVE_STRENGTH_DEFAULT"/>
+                        <Param id="extended_drive_sel" value="false"/>
+                        <Param id="inFlash" value="true"/>
+                        <Param id="initialState" value="1"/>
+                        <Param id="isrTrigger" value="CY_GPIO_INTR_DISABLE"/>
+                        <Param id="nonSec" value="1"/>
+                        <Param id="pullUpRes" value="CY_GPIO_PULLUP_RES_DISABLE"/>
+                        <Param id="sioOutputBuffer" value="true"/>
+                        <Param id="slewRate" value="CY_GPIO_SLEW_FAST"/>
+                        <Param id="vtrip" value="CY_GPIO_VTRIP_CMOS"/>
+                    </Parameters>
+                </Personality>
+                <Personality template="pin" version="3.0">
                     <Block location="ioss[0].port[6].pin[5]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_DEBUG_UART_RX"/>
@@ -1012,6 +1008,28 @@
                     </Block>
                     <Parameters>
                         <Param id="DriveModes" value="CY_GPIO_DM_OD_DRIVESLOW"/>
+                        <Param id="driveStrength" value="CY_GPIO_DRIVE_1_2"/>
+                        <Param id="driveStrengthTrim" value="CY_GPIO_DRIVE_STRENGTH_DEFAULT"/>
+                        <Param id="extended_drive_sel" value="false"/>
+                        <Param id="inFlash" value="true"/>
+                        <Param id="initialState" value="1"/>
+                        <Param id="isrTrigger" value="CY_GPIO_INTR_DISABLE"/>
+                        <Param id="nonSec" value="1"/>
+                        <Param id="pullUpRes" value="CY_GPIO_PULLUP_RES_DISABLE"/>
+                        <Param id="sioOutputBuffer" value="true"/>
+                        <Param id="slewRate" value="CY_GPIO_SLEW_FAST"/>
+                        <Param id="vtrip" value="CY_GPIO_VTRIP_CMOS"/>
+                    </Parameters>
+                </Personality>
+                <Personality template="pin" version="3.0">
+                    <Block location="ioss[0].port[8].pin[2]" locked="true">
+                        <Aliases>
+                            <Alias value="CYBSP_BT_REG_ON"/>
+                            <Alias value="CYBSP_BT_POWER"/>
+                        </Aliases>
+                    </Block>
+                    <Parameters>
+                        <Param id="DriveModes" value="CY_GPIO_DM_PULLUP"/>
                         <Param id="driveStrength" value="CY_GPIO_DRIVE_1_2"/>
                         <Param id="driveStrengthTrim" value="CY_GPIO_DRIVE_STRENGTH_DEFAULT"/>
                         <Param id="extended_drive_sel" value="false"/>
@@ -2906,6 +2924,54 @@
                 <Personality template="timerclk" version="3.0">
                     <Block location="srss[0].clock[0].timerclk[0]" locked="true"/>
                 </Personality>
+                <Personality template="mcwdt" version="3.0">
+                    <Block location="srss[0].mcwdt[0]" locked="true">
+                        <Aliases>
+                            <Alias value="CYBSP_CM33_LPTIMER_0"/>
+                        </Aliases>
+                    </Block>
+                    <Parameters>
+                        <Param id="C0ClearOnMatch" value="FREE_RUNNING"/>
+                        <Param id="C0LowerLimit" value="0"/>
+                        <Param id="C0LowerLimitMode" value="CY_MCWDT_LOWER_LIMIT_MODE_NOTHING"/>
+                        <Param id="C0Match" value="32768"/>
+                        <Param id="C0Mode" value="CY_MCWDT_MODE_INT"/>
+                        <Param id="C1ClearOnMatch" value="FREE_RUNNING"/>
+                        <Param id="C1LowerLimit" value="0"/>
+                        <Param id="C1LowerLimitMode" value="CY_MCWDT_LOWER_LIMIT_MODE_NOTHING"/>
+                        <Param id="C1Match" value="32768"/>
+                        <Param id="C1Mode" value="CY_MCWDT_MODE_INT"/>
+                        <Param id="C2Mode" value="CY_MCWDT_MODE_NONE"/>
+                        <Param id="C2Period" value="0"/>
+                        <Param id="CascadeC0C1" value="true"/>
+                        <Param id="CascadeC1C2" value="false"/>
+                        <Param id="inFlash" value="true"/>
+                    </Parameters>
+                </Personality>
+                <Personality template="mcwdt" version="3.0">
+                    <Block location="srss[0].mcwdt[1]" locked="true">
+                        <Aliases>
+                            <Alias value="CYBSP_CM55_LPTIMER_1"/>
+                        </Aliases>
+                    </Block>
+                    <Parameters>
+                        <Param id="C0ClearOnMatch" value="FREE_RUNNING"/>
+                        <Param id="C0LowerLimit" value="0"/>
+                        <Param id="C0LowerLimitMode" value="CY_MCWDT_LOWER_LIMIT_MODE_NOTHING"/>
+                        <Param id="C0Match" value="32768"/>
+                        <Param id="C0Mode" value="CY_MCWDT_MODE_INT"/>
+                        <Param id="C1ClearOnMatch" value="FREE_RUNNING"/>
+                        <Param id="C1LowerLimit" value="0"/>
+                        <Param id="C1LowerLimitMode" value="CY_MCWDT_LOWER_LIMIT_MODE_NOTHING"/>
+                        <Param id="C1Match" value="32768"/>
+                        <Param id="C1Mode" value="CY_MCWDT_MODE_INT"/>
+                        <Param id="C2Mode" value="CY_MCWDT_MODE_NONE"/>
+                        <Param id="C2Period" value="0"/>
+                        <Param id="CascadeC0C1" value="true"/>
+                        <Param id="CascadeC1C2" value="false"/>
+                        <Param id="inFlash" value="true"/>
+                    </Parameters>
+                </Personality>
                 <Personality template="power_v4" version="1.0">
                     <Block location="srss[0].power[0]" locked="true"/>
                     <Parameters>
@@ -2917,6 +2983,37 @@
                         <Param id="vdddMv" value="1800"/>
                         <Param id="vddio0Mv" value="1800"/>
                         <Param id="vddio1Mv" value="1800"/>
+                    </Parameters>
+                </Personality>
+                <Personality template="rtc" version="3.0">
+                    <Block location="srss[0].rtc[0]" locked="true">
+                        <Aliases>
+                            <Alias value="CYBSP_RTC"/>
+                        </Aliases>
+                    </Block>
+                    <Parameters>
+                        <Param id="amPmPeriodOfDay" value="CY_RTC_AM"/>
+                        <Param id="dayOfTheMonth" value="1"/>
+                        <Param id="dst" value="false"/>
+                        <Param id="dstFormat" value="CY_RTC_DST_RELATIVE"/>
+                        <Param id="dstStartDay" value="22"/>
+                        <Param id="dstStartDayOfWeek" value="CY_RTC_SUNDAY"/>
+                        <Param id="dstStartHour" value="0"/>
+                        <Param id="dstStartMonth" value="CY_RTC_MARCH"/>
+                        <Param id="dstStartWeek" value="CY_RTC_LAST_WEEK_OF_MONTH"/>
+                        <Param id="dstStopDay" value="22"/>
+                        <Param id="dstStopDayOfWeek" value="CY_RTC_SUNDAY"/>
+                        <Param id="dstStopHour" value="0"/>
+                        <Param id="dstStopMonth" value="CY_RTC_OCTOBER"/>
+                        <Param id="dstStopWeek" value="CY_RTC_LAST_WEEK_OF_MONTH"/>
+                        <Param id="format" value="0"/>
+                        <Param id="hr" value="12"/>
+                        <Param id="hrFormat" value="CY_RTC_24_HOURS"/>
+                        <Param id="inFlash" value="true"/>
+                        <Param id="min" value="0"/>
+                        <Param id="month" value="CY_RTC_JANUARY"/>
+                        <Param id="sec" value="0"/>
+                        <Param id="year" value="24"/>
                     </Parameters>
                 </Personality>
                 <Personality template="mxs40timercounter_ver2" version="1.0">
