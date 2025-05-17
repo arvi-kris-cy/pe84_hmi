@@ -49,7 +49,7 @@
 /*******************************************************************************
 * Macros
 *******************************************************************************/
-#define BLINKY_LED_DELAY_MSEC       (1000U)
+#define BLINKY_LED_DELAY_MSEC       (200U)
 
 /* The timeout value in microseconds used to wait for CM55 core to be booted */
 #define CM55_BOOT_WAIT_TIME_USEC    (10U)
@@ -96,15 +96,8 @@ int main(void)
     printf("\x1b[2J\x1b[;H");
 
     printf("****************** "
-           "PSOC Edge MCU: Hello world "
+           "PSOC Edge HMI Kit: Hello world "
            "****************** \r\n\n");
-
-    printf("Hello World!\r\n\n");
-    printf("For more projects, "
-           "visit our code examples repositories:\r\n\n");
-
-    printf("https://github.com/Infineon/"
-           "Code-Examples-for-ModusToolbox-Software\r\n\n");
 
     /* Enable CM55. */
     /* CY_CM55_APP_BOOT_ADDR must be updated if CM55 memory layout is changed.*/
