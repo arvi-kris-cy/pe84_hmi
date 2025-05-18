@@ -29,7 +29,7 @@ $(info Processing $(lastword $(MAKEFILE_LIST)))
 endif
 
 # Any additional components to apply when using this board.
-BSP_COMPONENTS:=HCI-UART WIFI_INTERFACE_SDIO SM CYW55513_MOD_PSE84_SOM wlbga_iPA_sLNA_ANT0_LHL_XTAL_IN
+BSP_COMPONENTS:=HCI-UART WIFI_INTERFACE_SDIO SM MURATA-2FY wlbga_iPA_sLNA_ANT0_LHL_XTAL_IN
 
 # Any additional defines to apply when using this board.
 BSP_DEFINES+=CY_WIFI_COUNTRY='WHD_COUNTRY_UNITED_STATES'
