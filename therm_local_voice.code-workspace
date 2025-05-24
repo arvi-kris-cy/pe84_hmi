@@ -36,7 +36,8 @@
         "clangd.arguments": [
             "--query-driver=${config:modustoolbox.toolsPath}/gcc/bin/arm-none-eabi-gcc",
             "--log=verbose",
-            "--background-index"
+            "--background-index",
+            "--compile-commands-dir=${workspaceFolder}/proj_cm55/build"
         ]
     },
     "extensions": {
